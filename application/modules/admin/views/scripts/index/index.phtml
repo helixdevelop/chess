@@ -1,0 +1,22 @@
+<div class="content-wrapper" id="login-wrapper">
+    <div class="units-row">
+        <div class="unit-centered unit-40 unit-dark animated" data-animation="bounceInDown">
+            <form class="forms" method="<?php echo $this->form->getMethod(); ?>">
+                <div class="form-item">
+                    <p class="legend"><?php echo $this->translate('Login to dashboard'); ?></p>
+                </div>
+                <div class="form-item">
+                    <div class="input-prepend"><i class="fa fa-user"></i></div>
+                    <?php echo $this->form->getElement('login'); ?>
+                </div>
+                <div class="form-item">
+                    <div class="input-prepend"><i class="fa fa-lock"></i></div>
+                    <?php echo $this->form->getElement('password'); ?>
+                </div>
+                <div class="form-item">
+                    <?php echo $this->form->getElement('submit'); ?>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>

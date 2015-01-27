@@ -1,0 +1,19 @@
+* { font-family: 'Roboto'; }
+
+.animated { opacity: 0; }
+
+.unit-dark { background-color: #363738;border: 2px solid #000; }
+.unit-dark .forms input[type="submit"] { background: #000; }
+.forms { margin: 0 0 20px;padding: 10px 0; }
+.forms input[type="text"], 
+.forms input[type="password"],
+.forms input[type="submit"] { font-family: 'Roboto', sans-serif;font-weight: 300;text-indent: 25px;margin: 0 auto; }
+.forms input[type="submit"] { border-radius: 0;text-indent: 0;display: block;margin-left: auto;margin-right: 0; }
+.forms .form-item { position: relative;margin: 10px 20px; }
+.forms .input-prepend { position: absolute;top: 5px;left: 10px;z-index: 10; }
+.forms .fa { color: #363738; }
+.forms .legend { color: #fff;font-weight: 300; }
+
+.content-wrapper { padding-top: 1px; }
+
+#login-wrapper { padding-top: 60px; }
