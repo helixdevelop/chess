@@ -58,4 +58,15 @@ class Administrator_Model_Administrators extends Zend_Db_Table_Abstract
         
         return true;
     }
+    
+    public function getAdministrators()
+    {
+        $result = $this->select();
+        
+        if(count($result) == 0) {
+            return false;
+        }
+        
+        return $result;
+    }
 }

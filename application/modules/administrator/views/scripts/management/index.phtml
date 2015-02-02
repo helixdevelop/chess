@@ -1,0 +1,35 @@
+<div class="content-wrapper" id="login-wrapper">
+    <div class="units-row">
+        <div class="unit-centered unit-100 animated" data-animation="bounceInRight">
+            <button class="btn btn-black right"><?php echo $this->translate('Add new admin'); ?></button>
+            <div class="clear"></div>
+            <table class="table-stripped">
+                <tr>
+                    <th></th>
+                    <th><?php echo $this->translate('Name'); ?></th>
+                    <th><?php echo $this->translate('E-mail'); ?></th>
+                    <th><?php echo $this->translate('Action'); ?></th>
+                </tr>
+                <?php $i = 1; ?>
+                <?php if(count($this->administrators)): ?>
+                    <?php foreach ($this->administrators as $administrator): ?>
+                        <tr>
+                            <td><?php echo $i; ?></td>
+                            <td><?php echo $administrator->name; ?></td>
+                            <td><?php echo $administrator->email; ?></td>
+                            <td></td>
+                        </tr>
+                    <?php ++$i; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4"><?php echo $this->translate('No items to display'); ?></td>
+                    </tr>
+                <?php endif; ?>
+                
+            </table>
+            
+        </div>
+    </div>
+</div>
+

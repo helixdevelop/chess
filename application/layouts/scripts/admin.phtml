@@ -7,11 +7,30 @@
         <link href="/panel/css/styles.css" media="screen" rel="stylesheet" type="text/css" >
         <link href="/panel/css/animate.css" media="screen" rel="stylesheet" type="text/css" >
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:700,400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     </head>
     <body>
+        <?php if(Zend_Auth::getInstance()->hasIdentity()): ?>
+        <div class="content-wrapper" id="bar-wrapper">
+            <div class="units-row">
+                <div class="unit-100 unit-dark animated" data-animation="bounceInDown">
+                    <div class="logo">Helix Panel</div>
+                    <div class="settings">
+                        <p class="settings-email"><?php echo Zend_Auth::getInstance()->getIdentity(); ?></p>
+                        <i class="fa fa-cogs" data-tools="dropdown" data-target="#settings-dropdown"></i>
+                        <ul id="settings-dropdown" class="dropdown">
+                            <li><a href="<?php echo $this->url(array(), 'administrator-management'); ?>"><?php echo $this->translate('Admin management'); ?></a></li>
+                            <li><a href="<?php echo $this->url(array(), 'admin-logout'); ?>"><?php echo $this->translate('Logout'); ?></a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
         <?php echo $this->layout()->content; ?>
     </body>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="/panel/js/main.js" type="text/javascript"></script>
+    <script src="/panel/js/kube.js" type="text/javascript"></script>
 </html>

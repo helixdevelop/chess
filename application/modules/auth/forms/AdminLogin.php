@@ -11,10 +11,13 @@ class Auth_Form_AdminLogin extends Zend_Form
         
         $this->setMethod('POST');
         
+        $this->setAction($view->url(array(), 'admin-panel'));
+        
         $this->addElement('text', 'login', array(
             'placeholder' => $view->translate('Enter login'),
             'required' => true,
             'class' => 'width-100',
+            'required' => true,
             'decorators' => array('ViewHelper')
         ));
         
@@ -22,6 +25,7 @@ class Auth_Form_AdminLogin extends Zend_Form
             'placeholder' => $view->translate('Enter password'),
             'required' => true,
             'class' => 'width-100',
+            'required' => true,
             'decorators' => array('ViewHelper')
         ));
         

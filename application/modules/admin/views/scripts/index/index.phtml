@@ -1,7 +1,8 @@
+<?php if(!Zend_Auth::getInstance()->hasIdentity()): ?>
 <div class="content-wrapper" id="login-wrapper">
     <div class="units-row">
         <div class="unit-centered unit-40 unit-dark animated" data-animation="bounceInDown">
-            <form class="forms" method="<?php echo $this->form->getMethod(); ?>">
+            <form class="forms" method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>">
                 <div class="form-item">
                     <p class="legend"><?php echo $this->translate('Login to dashboard'); ?></p>
                 </div>
@@ -20,3 +21,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
