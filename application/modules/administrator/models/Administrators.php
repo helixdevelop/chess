@@ -15,6 +15,7 @@ class Administrator_Model_Administrators extends Zend_Db_Table_Abstract
     public function createUser($name, $password, $email)
     {
         $salt = md5(uniqid());
+        $userId = 0;
         
         $userData = array(
             'salt' => $salt,
@@ -39,6 +40,31 @@ class Administrator_Model_Administrators extends Zend_Db_Table_Abstract
         
     }
     
+    public function updateUser($id, $name, $password, $email, $salt)
+    {
+        if($password != null) {
+            $this->update(array(
+                        'name' => $name,
+                        'email' => $email,
+                        'password' => Helix_Password::generatePassword($password, $salt)
+                        ), 'id = ' . $id);
+        } else {
+            $this->update(array(
+                        'name' => $name,
+                        'email' => $email,
+                        ), 'id = ' . $id);
+        }
+        
+        return true;
+        
+    }
+    
+    public function deleteUser($id)
+    {
+        $this->delete('id = ' . $id);
+        return true;
+        
+    }
     /**
      * Check if user already exist
      * @param string $name
@@ -47,11 +73,10 @@ class Administrator_Model_Administrators extends Zend_Db_Table_Abstract
      */
     public function checkExist($name, $email)
     {
-        $result = $this->select()
+        $query = $this->select()
                     ->where('name = ?', $name)
-                    ->where('email = ?', $email)
-                    ->query();
-        
+                    ->orWhere('email = ?', $email);
+        $result = $this->fetchAll($query);
         if(count($result) == 0) {
             return false;
         }
@@ -59,10 +84,38 @@ class Administrator_Model_Administrators extends Zend_Db_Table_Abstract
         return true;
     }
     
+    /**
+     * Get all administrator
+     * @return mixed
+     */
+    
     public function getAdministrators()
     {
-        $result = $this->select();
+        $result = $this->select()
+                    ->order('id DESC');
         
+        if(count($result) == 0) {
+            return false;
+        }
+        
+        return $result;
+    }
+    
+    /**
+     * Get administrator by id
+     * @return mixed
+     */
+    
+    public function getAdministrator($id)
+    {
+        if($id == null) {
+            return false;
+        }
+        
+        $query = $this->select()
+                    ->where('id = ?', $id);
+        
+        $result = $this->fetchRow($query);
         if(count($result) == 0) {
             return false;
         }

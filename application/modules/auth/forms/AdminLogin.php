@@ -17,7 +17,6 @@ class Auth_Form_AdminLogin extends Zend_Form
             'placeholder' => $view->translate('Enter login'),
             'required' => true,
             'class' => 'width-100',
-            'required' => true,
             'decorators' => array('ViewHelper')
         ));
         
@@ -25,7 +24,6 @@ class Auth_Form_AdminLogin extends Zend_Form
             'placeholder' => $view->translate('Enter password'),
             'required' => true,
             'class' => 'width-100',
-            'required' => true,
             'decorators' => array('ViewHelper')
         ));
         

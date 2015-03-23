@@ -2805,8 +2805,8 @@
 			}
 
 			this.tooltip.css({
-				top: (this.$element.offset().top + this.$element.innerHeight()) + 'px',
-				left: this.$element.offset().left + 'px'
+				top: (this.$element.offset().top + this.$element.innerHeight() - 17) + 'px',
+				left: (this.$element.offset().left + 20) + 'px'
 			});
 
 			$('body').append(this.tooltip);

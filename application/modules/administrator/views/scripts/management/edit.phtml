@@ -1,0 +1,31 @@
+<div class="content-wrapper" id="admin-form-wrapper">
+    <div class="units-row">
+        <div class="unit unit-50 unit-dark animated admin-form-box" data-animation="bounceInRight">
+            <form class="forms" method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>">
+                <div class="form-item">
+                    <p class="legend"><?php echo $this->translate('Edit admin user'); ?></p>
+                </div>
+                <div class="form-item">
+                    <div class="input-prepend"><i class="fa fa-user"></i></div>
+                    <?php echo $this->form->getElement('name'); ?>
+                    <?php echo Helix_FormErrorFormater::format($this->form->getElement('name')->getMessages()); ?>
+                </div>
+                <div class="form-item">
+                    <div class="input-prepend"><i class="fa fa-envelope"></i></div>
+                    <?php echo $this->form->getElement('email'); ?>
+                    <?php echo Helix_FormErrorFormater::format($this->form->getElement('email')->getMessages()); ?>
+                </div>
+                <div class="form-item">
+                    <div class="input-prepend"><i class="fa fa-lock"></i></div>
+                    <?php echo $this->form->getElement('password'); ?>
+                    <?php echo Helix_FormErrorFormater::format($this->form->getElement('password')->getMessages()); ?>
+                </div>
+                <div class="form-item">
+                    <?php echo $this->form->getElement('submit'); ?>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>
+
+

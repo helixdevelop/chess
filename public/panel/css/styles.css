@@ -2,8 +2,32 @@
 
 .clear { clear: both; }
 .animated { opacity: 0; }
-table th, table td { color: #363738; }
+.float-left { float: left; }
+.float-right { float: right; }
+.hidden-elem { display: none; }
+p { margin: 0;padding: 0; }
+table th, table td { color: #363738;font-size: 12px; }
 table th { font-weight: 700; }
+table .center { text-align: center; }
+table  a { padding: 0 7px; }
+
+.modal section, .modal header { color: #363738; }
+.modal-box .btn { color: #fff;background: #363738;font-family: 'Roboto';font-weight: 300; }
+.modal-box .btn:hover { background: #000; }
+
+.fa-times { color: red;cursor: pointer; }
+.fa-plus { color: green;cursor: pointer; }
+.fa-pencil { color: green;cursor: pointer; }
+
+.pagination .fa-arrow-left, .pagination .fa-arrow-right { color: #363738; }
+.pagination li:hover .fa-arrow-left, .pagination li:hover .fa-arrow-right { color: #fff; }
+.pagination span, .pagination li.active a, .pagination li a:hover { background: #363738 !important; }
+.pagination a, .pagination span { font-size: 11px; }
+
+.admin-content-box { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);padding: 30px 20px;margin-left: 25px !important; }
+.admin-content-box .fa-plus { margin-top: 7px; }
+
+.admin-form-box { margin-left: 25px !important; }
 
 .unit-dark { background-color: #363738;border: 2px solid #000; }
 .unit-dark .forms input[type="submit"] { background: #000; }
@@ -30,3 +54,12 @@ table th { font-weight: 700; }
 #bar-wrapper .settings p { display: inline; }
 #settings-dropdown { right: 10px !important;left: auto !important;top: 45px !important; }
 .settings-email { margin-right: 10px; }
+
+.breadcrumbs { margin-left: 25px;font-size: 12px; }
+.breadcrumbs a { padding: 3px 10px;border-radius: 3px;color: #fff;background: #363738;  }
+.breadcrumbs a:hover { color: #fff;text-decoration: none; }
+.breadcrumbs a:last-child { color: #363738;background: #fff;  }
+.breadcrumbs a:last-child:hover { text-decoration: underline;  }
+
+.navigation a { background: #363738 !important;color: #fff !important; }
+.navigation a:hover { background: #000 !important;text-decoration: none;cursor: pointer !important; }

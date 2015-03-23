@@ -1,8 +1,8 @@
 <div class="content-wrapper">
     <div class="units-row">
         <div class="unit unit-50 animated admin-content-box" data-animation="bounceInRight">
-            <a href="<?php echo $this->url(array(), 'administrator-add'); ?>"><i class="fa fa-plus float-left" data-tools="tooltip" data-theme="green" title="<?php echo $this->translate('Add new admin'); ?>"></i></a>
-            <?php echo $this->paginationControl($this->administrators,
+            <a href="<?php echo $this->url(array(), 'news-add'); ?>"><i class="fa fa-plus float-left" data-tools="tooltip" data-theme="green" title="<?php echo $this->translate('Add new news'); ?>"></i></a>
+            <?php echo $this->paginationControl($this->news,
                                                 'Sliding',
                                                 'management/pagination.phtml'); 
             ?>
@@ -14,16 +14,16 @@
                     <th><?php echo $this->translate('E-mail'); ?></th>
                     <th class="center"><?php echo $this->translate('Action'); ?></th>
                 </tr>
-                <?php $i = $this->administrators->getTotalItemCount(); ?>
-                <?php if(count($this->administrators->getTotalItemCount())): ?>
-                    <?php foreach ($this->administrators as $administrator): ?>
+                <?php $i = $this->news->getTotalItemCount(); ?>
+                <?php if(count($this->news->getTotalItemCount())): ?>
+                    <?php foreach ($this->news as $post): ?>
                         <tr>
                             <td><?php echo $i; ?></td>
-                            <td><?php echo $administrator->name; ?></td>
-                            <td><?php echo $administrator->email; ?></td>
+                            <td><?php echo $post->name; ?></td>
+                            <td><?php echo $post->email; ?></td>
                             <td class="center">
-                                <a href="<?php echo $this->url(array('id' => $administrator->id), 'administrator-edit'); ?>"><i class="fa fa-pencil" data-tools="tooltip" data-theme="green" title="<?php echo $this->translate('Edit'); ?>"></i></a>
-                                <a class="show-modal" data-url="<?php echo $this->url(array('id' => $administrator->id), 'administrator-delete'); ?>" data-tools="modal" data-width="300" data-title="<?php echo $this->translate('Alert'); ?>" data-content="#agreeBox" href="#"><i class="fa fa-times" data-tools="tooltip" data-theme="red" title="<?php echo $this->translate('Delete'); ?>"></i></a>
+                                <a href="<?php echo $this->url(array('id' => $post->id), 'news-edit'); ?>"><i class="fa fa-pencil" data-tools="tooltip" data-theme="green" title="<?php echo $this->translate('Edit'); ?>"></i></a>
+                                <a class="show-modal" data-url="<?php echo $this->url(array('id' => $post->id), 'news-delete'); ?>" data-tools="modal" data-width="300" data-title="<?php echo $this->translate('Alert'); ?>" data-content="#agreeBox" href="#"><i class="fa fa-times" data-tools="tooltip" data-theme="red" title="<?php echo $this->translate('Delete'); ?>"></i></a>
                             </td>
                         </tr>
                     <?php --$i; ?>
@@ -34,7 +34,7 @@
                     </tr>
                 <?php endif; ?>
             </table>
-            <?php echo $this->paginationControl($this->administrators,
+            <?php echo $this->paginationControl($this->news,
                                                 'Sliding',
                                                 'management/pagination.phtml'); 
             ?>

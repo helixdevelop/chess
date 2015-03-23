@@ -27,17 +27,8 @@ class Admin_Bootstrap extends Zend_Application_Module_Bootstrap
             )
         );
         
-        $route['admin-management'] = new Zend_Controller_Router_Route(
-            '@admin/@management',
-            array(
-                'module' => 'admin',
-                'controller' => 'index',
-                'action' => 'management'
-            )
-        );
-        
         $router->addRoutes($route);
     }
 
 }
-
+    

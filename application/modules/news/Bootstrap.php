@@ -1,48 +1,48 @@
 <?php
 
-class Administrator_Bootstrap extends Zend_Application_Module_Bootstrap
-{
+class News_Bootstrap extends Zend_Application_Module_Bootstrap
+{    
     /**
-     * Initialize routing for Administrator module
+     * Initialize routing for News module
      */
     protected function _initRouting() {
         
         $router = Zend_Controller_Front::getInstance()->getRouter();
         
-        $route['administrator-management'] = new Zend_Controller_Router_Route(
-            '@admin/@administrator/@management/:page',
+        $route['news-management'] = new Zend_Controller_Router_Route(
+            '@admin/@news/@management/:page',
             array(
                 'module' => 'administrator',
-                'controller' => 'management',
+                'controller' => 'news',
                 'action' => 'index',
                 'page' => 1
             )
         );
         
-        $route['administrator-add'] = new Zend_Controller_Router_Route(
-            '@admin/@administrator/@add',
+        $route['news-add'] = new Zend_Controller_Router_Route(
+            '@admin/@news/@add',
             array(
                 'module' => 'administrator',
-                'controller' => 'management',
+                'controller' => 'news',
                 'action' => 'add'
             )
         );
         
-        $route['administrator-edit'] = new Zend_Controller_Router_Route(
-            '@admin/@administrator/@edit/:id',
+        $route['news-edit'] = new Zend_Controller_Router_Route(
+            '@admin/@news/@edit/:id',
             array(
                 'module' => 'administrator',
-                'controller' => 'management',
+                'controller' => 'news',
                 'action' => 'edit',
                 'id' => null
             )
         );
         
-        $route['administrator-delete'] = new Zend_Controller_Router_Route(
-            '@admin/@administrator/@delete/:id',
+        $route['news-delete'] = new Zend_Controller_Router_Route(
+            '@admin/@news/@delete/:id',
             array(
                 'module' => 'administrator',
-                'controller' => 'management',
+                'controller' => 'news',
                 'action' => 'delete',
                 'id' => null
             )

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <home>
+        <label>Home</label>
+        <order>1</order>
+        <route>admin-panel</route>
+        <pages>
+            <administrator-management>
+                <label>Admin management</label>
+                <order>3</order>
+                <route>administrator-management</route>
+                <pages>
+                    <administrator-add>
+                        <label>Add admin</label>
+                        <order>1</order>
+                        <route>administrator-add</route>
+                    </administrator-add>
+                    <administrator-edit>
+                        <label>Edit admin</label>
+                        <order>1</order>
+                        <route>administrator-edit</route>
+                    </administrator-edit>
+                    <administrator-delete>
+                        <label>Delete admin</label>
+                        <order>1</order>
+                        <route>administrator-delete</route>
+                    </administrator-delete>
+                </pages>
+            </administrator-management>
+            <news-management>
+                <label>News management</label>
+                <order>2</order>
+                <route>news-management</route>
+                <pages>
+                    <news-add>
+                        <label>Add news</label>
+                        <order>1</order>
+                        <route>news-add</route>
+                    </news-add>
+                    <news-edit>
+                        <label>Edit news</label>
+                        <order>1</order>
+                        <route>news-edit</route>
+                    </news-edit>
+                    <news-delete>
+                        <label>Delete news</label>
+                        <order>1</order>
+                        <route>news-delete</route>
+                    </news-delete>
+                </pages>
+            </news-management>
+        </pages>
+    </home>
+</config>

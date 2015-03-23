@@ -3,13 +3,14 @@
     <head>
         <title>Helix Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="robots" content="noindex,nofollow" />
         <link href="/panel/css/kube.css" media="screen" rel="stylesheet" type="text/css" >
         <link href="/panel/css/styles.css" media="screen" rel="stylesheet" type="text/css" >
         <link href="/panel/css/animate.css" media="screen" rel="stylesheet" type="text/css" >
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Roboto:700,400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     </head>
-    <body>
+    <body>         
         <?php if(Zend_Auth::getInstance()->hasIdentity()): ?>
         <div class="content-wrapper" id="bar-wrapper">
             <div class="units-row">
@@ -28,9 +29,22 @@
             </div>
         </div>
         <?php endif; ?>
-        <?php echo $this->layout()->content; ?>
+        <div class="units-row">
+            <div class="unit-20 animated" data-animation="bounceInLeft">
+                <nav class="nav nav-stacked">
+                    <?php echo $this->navigation()->menu()->setMinDepth(1)->setMaxDepth(1); ?>
+                </nav>
+            </div>
+            <div class="unit-80 animated" data-animation="bounceInRight">
+                <nav class="breadcrumbs breadcrumbs-path">
+                    <?php echo $this->navigation()->breadcrumbs()->setSeparator(' ')->setLinkLast(true)->setMinDepth(0)->render(); ?>
+                </nav>
+                <?php echo $this->layout()->content; ?>
+                <?php echo Helix_Notification::getNotifications(); ?>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="/panel/js/main.js" type="text/javascript"></script>
+        <script src="/panel/js/kube.js" type="text/javascript"></script>
     </body>
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="/panel/js/main.js" type="text/javascript"></script>
-    <script src="/panel/js/kube.js" type="text/javascript"></script>
 </html>
